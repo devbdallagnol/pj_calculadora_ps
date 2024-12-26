@@ -1,7 +1,10 @@
+import Button from "./components/Button";
+
 function App() {
   return (
     <div className="App">
-      ola
+      <h1>Calculadora PS</h1>
+      <Button />
     </div>
   );
 }
