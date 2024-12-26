@@ -1,10 +1,10 @@
-import Button from "./components/Button";
+import Display from "./components/Displays/Display";
 
 function App() {
   return (
     <div className="App">
       <h1>Calculadora PS</h1>
-      <Button />
+      <Display/>
     </div>
   );
 }
