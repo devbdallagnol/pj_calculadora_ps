@@ -9,4 +9,9 @@ export const BodyContainer = styled.div`
     justify-content: center;
     align-items: center;
 
+    font-family: "Michroma", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8em;
+
 `;
