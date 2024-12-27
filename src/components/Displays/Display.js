@@ -25,7 +25,9 @@ const Display = () => {
       } else if (salaryNumber <= 7786.02) {
         inssNumber = salaryNumber * 0.14;
       } else if (salaryNumber > 7786.02) {
+        setInss(null);
         setResult("Limite de INSS atingido");
+        return;
       }
 
       setInss(inssNumber.toFixed(2));
@@ -37,12 +39,17 @@ const Display = () => {
   };
 
   const handleCalculation = () => {
+    if (inss === null) {
+      setResult("Limite de INSS atingido");
+      return;
+    }
+
     const salaryNumber = parseFloat(salary);
     const inssNumber = parseFloat(inss);
 
     if (!isNaN(salaryNumber) && !isNaN(inssNumber)) {
       if (inssNumber > 0) {
-        setResult(((salaryNumber - inssNumber).toFixed(2)) * 0.3);
+        setResult(((salaryNumber - inssNumber) * 0.3).toFixed(2));
       }
     } else {
       setResult("Valores inválidos");
@@ -60,11 +67,15 @@ const Display = () => {
         />
         <Input
           placeholder="INSS"
-          value={inss}
+          value={inss !== null ? inss : ""}
           onChange={handleInssChange}
         />
         <Button onClick={handleCalculation}>Calcular</Button>
-        {result !== null && <h3>Resultado: <span style={{ color: 'green' }} >R$ {result}</span></h3>}
+        {result !== null && (
+          <h3>
+            Resultado: <span style={{ color: inss === null ? 'red' : 'green' }}>{result}</span>
+          </h3>
+        )}
       </DisplayContainer>
     </>
   );
