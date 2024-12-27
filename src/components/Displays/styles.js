@@ -14,6 +14,7 @@ export const DisplayContainer = styled.div`
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   transition: background-color 0.3s ease-in-out;
 
