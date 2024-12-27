@@ -1,10 +1,13 @@
 import Display from "./components/Displays/Display";
+import { BodyContainer } from "./styles/GlobalStyles";
 
 function App() {
   return (
     <div className="App">
-      <h1>Calculadora PS</h1>
-      <Display/>
+      <BodyContainer>
+
+        <Display/>
+      </BodyContainer>
     </div>
   );
 }

@@ -2,12 +2,12 @@ import styled from 'styled-components';
 
 export const ButtonContainer = styled.button`
   background-color: #007BFF;
-  width: 150px;
+  width: 250px;
   height: 50px;
   color: #ffffff;
   font-size: 1.2em;
   padding: 10px 20px;
-  margin: 5px;
+  margin: 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
