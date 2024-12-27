@@ -1,19 +1,48 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
-import { DisplayContainer, h2 } from "./styles";
+import { DisplayContainer } from "./styles";
 
 const Display = () => {
+  const [salary, setSalary] = useState("");
+  const [inss, setInss] = useState("");
   const [result, setResult] = useState(null);
-  const salaryRef = useRef("");
-  const inssRef = useRef("");
+
+  const handleSalaryChange = (e) => {
+    const salaryValue = e.target.value;
+    setSalary(salaryValue);
+
+    const salaryNumber = parseFloat(salaryValue);
+    let inssNumber = 0;
+
+    if (!isNaN(salaryNumber)) {
+      if (salaryNumber <= 1412.00) {
+        inssNumber = salaryNumber * 0.075;
+      } else if (salaryNumber <= 2666.68) {
+        inssNumber = salaryNumber * 0.09;
+      } else if (salaryNumber <= 4000.03) {
+        inssNumber = salaryNumber * 0.12;
+      } else if (salaryNumber <= 7786.02) {
+        inssNumber = salaryNumber * 0.14;
+      } else {
+        inssNumber = 0;
+        setResult("Limite do INSS atingido");
+      }
+
+      setInss(inssNumber.toFixed(2));
+    }
+  };
+
+  const handleInssChange = (e) => {
+    setInss(e.target.value);
+  };
 
   const handleCalculation = () => {
-    const salaryNumber = parseFloat(salaryRef.current.value);
-    const inssNumber = parseFloat(inssRef.current.value);
+    const salaryNumber = parseFloat(salary);
+    const inssNumber = parseFloat(inss);
 
     if (!isNaN(salaryNumber) && !isNaN(inssNumber)) {
-      setResult((salaryNumber - inssNumber) * 0.3);
+      setResult(((salaryNumber - inssNumber).toFixed(2)) * 0.3);
     } else {
       setResult("Valores inválidos");
     }
@@ -23,10 +52,18 @@ const Display = () => {
     <>
       <DisplayContainer>
         <h1>Calculadora PS</h1>
-        <Input ref={salaryRef} placeholder="Salário" />
-        <Input ref={inssRef} placeholder="INSS" />
+        <Input
+          placeholder="Salário"
+          value={salary}
+          onChange={handleSalaryChange}
+        />
+        <Input
+          placeholder="INSS"
+          value={inss}
+          onChange={handleInssChange}
+        />
         <Button onClick={handleCalculation}>Calcular</Button>
-        {result !== null && <h2>Resultado: <span style={{ color: "green" }}>R$ {result.toFixed(2)}</span></h2>}
+        {result !== null && <h2>Resultado: {result}</h2>}
       </DisplayContainer>
     </>
   );

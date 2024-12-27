@@ -1,14 +1,15 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { InputContainer } from "./styles";
 
-const Input = forwardRef(({ placeholder }, ref) => {
+const Input = ({ placeholder, value, onChange }) => {
   return (
     <InputContainer
-      type="number"
+      type="text"
       placeholder={placeholder}
-      ref={ref}
+      value={value}
+      onChange={onChange}
     />
   );
-});
+};
 
 export default Input;
