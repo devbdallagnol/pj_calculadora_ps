@@ -1,4 +1,4 @@
-<img src="img/calculadora_ps.png" width="500px" alt="Calculadora PS">
+<img src="./src/img/calculadora_ps.png" width="500px" alt="Calculadora PS">
 
 <hr>
 
