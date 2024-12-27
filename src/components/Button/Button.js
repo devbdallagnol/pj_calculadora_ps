@@ -1,12 +1,12 @@
-import React from 'react';
-import { ButtonContainer } from './styles';
+import React from "react";
+import { ButtonContainer } from "./styles";
 
-const Button = () => {
+const Button = ({ onClick, children }) => {
   return (
-    <ButtonContainer>
-      <span>Calcular</span>
+    <ButtonContainer onClick={onClick}>
+      {children}
     </ButtonContainer>
   );
-}
+};
 
 export default Button;
