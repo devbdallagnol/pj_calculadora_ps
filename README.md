@@ -4,7 +4,7 @@
 
 # React - Calculadora PS
 
-Bem-vindo ao "Calculadora PS"! 🚀 Este é um repositório dedicado ao projeto React para desenvolvimento da calculadora utilizando styled-components. Consiste na base de cálculo do INSS sobre Salário, onde incide os 30% a serem descontados, conforme margem de valor a taxa de porcentagem é atualizada.
+Bem-vindo ao "Calculadora PS"! 🚀 Este é um repositório dedicado ao projeto React para desenvolvimento da calculadora utilizando styled-components. Consiste na base de cálculo do INSS sobre Salário, onde incide os 30% a serem descontados, conforme margem de valor a taxa de porcentagem é atualizada
 
 ## Descrição
 
