@@ -1,10 +1,10 @@
-<img src="img/calculadora_ps.png" width="500px" alt="Calculadora PS">
+<img src="./src/img/calculadora.png" width="500px" alt="Calculadora PS">
 
 <hr>
 
 # React - Calculadora PS
 
-Bem-vindo ao "Calculadora PS"! 🚀 Este é um repositório dedicado ao projeto React para desenvolvimento da calculadora utilizando styled-components.
+Bem-vindo ao "Calculadora PS"! 🚀 Este é um repositório dedicado ao projeto React para desenvolvimento da calculadora utilizando styled-components. Consiste na base de cálculo do INSS sobre Salário, onde incide os 30% a serem descontados, conforme margem de valor a taxa de porcentagem é atualizada.
 
 ## Descrição
 
